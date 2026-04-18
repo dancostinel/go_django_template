@@ -1,0 +1,44 @@
+services:
+    django3-service:
+        image: python:3.12
+        container_name: django3-container
+        volumes:
+            - ../django:/var/www/app
+        ports: ['8913:8899']
+        working_dir: /var/www/app
+        tty: true
+        # docker exec -it django3-container bash
+        # apt-get update && apt-get install -y gdal-bin && apt-get install vim -y --no-install-recommends
+        # python -m venv venv --upgrade-deps
+        # source venv/bin/activate
+        # (venv) pip install django
+        # (venv) django-admin --version
+        # (venv) django-admin startproject mysite .      # or src .
+        # (venv) python manage.py startapp myfirstapp
+        # (venv) python manage.py migrate
+        # (venv) python manage.py createsuperuser
+        #     Username (leave blank to use 'root'):
+        #     Email address: gesof.dan@gmail.com
+        #     Password: Abc123deF4
+        #     Password (again): Abc123deF4
+        # (venv) hostname -I | awk ' {print$1}'       # to get the IP address of the container
+        # 192.178.3.3
+        # (venv) vi src/settings.py
+        #     ALLOWED_HOSTS = ['*']
+        # (venv) python manage.py runserver 192.178.3.3:8899
+        # BROWSER http://localhost:8913
+    golang3-service:
+        build:
+            context: .
+            dockerfile: golang/Dockerfile
+        container_name: golang3_container
+        volumes:
+            - ../go:/app
+        environment:
+            - GOPATH=/go
+            - GOMODCACHE=/go/pkg/mod
+        tty: true
+        # docker exec -it golang3_container sh
+        # go version
+        # /app # go run main.go                                # this is in /app dir because of the volume mapping
+    ### $ docker compose -f docker/docker-compose.yaml up -d --build
