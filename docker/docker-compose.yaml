@@ -33,7 +33,7 @@ services:
             dockerfile: go/Dockerfile
         container_name: golang3_container
         volumes:
-            - ../go:/app
+            - ../golang:/app
         environment:
             - GOPATH=/go
             - GOMODCACHE=/go/pkg/mod
@@ -42,3 +42,4 @@ services:
         # go version
         # /app # go run main.go                                # this is in /app dir because of the volume mapping
     ### $ docker compose -f docker/docker-compose.yaml up -d --build
+    ### to recreate a container after changes in Dockerfile or docker-compose.yaml: $ docker compose -f docker/docker-compose.yaml up -d --build             ### --force-recreate
