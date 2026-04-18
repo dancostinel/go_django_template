@@ -23,7 +23,7 @@ services:
         #     Password (again): Abc123deF4
         # (venv) hostname -I | awk ' {print$1}'       # to get the IP address of the container
         # 192.178.3.3
-        # (venv) vi src/settings.py
+        # (venv) vi mysite/settings.py
         #     ALLOWED_HOSTS = ['*']
         # (venv) python manage.py runserver 192.178.3.3:8899
         # BROWSER http://localhost:8913
