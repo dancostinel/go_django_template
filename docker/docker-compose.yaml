@@ -13,7 +13,7 @@ services:
         # source venv/bin/activate
         # (venv) pip install django
         # (venv) django-admin --version
-        # (venv) django-admin startproject mysite .      # or src .
+        # (venv) django-admin startproject src .      # or mysite .
         # (venv) python manage.py startapp myfirstapp
         # (venv) python manage.py migrate
         # (venv) python manage.py createsuperuser
@@ -23,7 +23,7 @@ services:
         #     Password (again): Abc123deF4
         # (venv) hostname -I | awk ' {print$1}'       # to get the IP address of the container
         # 192.178.3.3
-        # (venv) vi mysite/settings.py
+        # (venv) vi src/settings.py
         #     ALLOWED_HOSTS = ['*']
         # (venv) python manage.py runserver 192.178.3.3:8899
         # BROWSER http://localhost:8913
