@@ -31,7 +31,7 @@ services:
         build:
             context: .
             dockerfile: go/Dockerfile
-        container_name: golang3_container
+        container_name: golang3-container
         volumes:
             - ../golang:/app
         environment:
