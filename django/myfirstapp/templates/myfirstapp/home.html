@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head><title>Home</title></head>
+<body>
+    <h1>Welcome to {{ name }}!</h1>
+    <p>You have {{ age }} years old</p>
+    <div>
+        <p>And your hobbies are:</p>
+        {% for hobby in hobbies %}
+            <p>{{ hobby }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>
